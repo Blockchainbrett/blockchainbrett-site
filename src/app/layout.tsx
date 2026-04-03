@@ -10,6 +10,9 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: "Brett Shear",
   description: "GP at 1confirmation. Investing in the decentralized future.",
+  icons: {
+    icon: "/cryptopunk.png",
+  },
 };
 
 export default function RootLayout({
