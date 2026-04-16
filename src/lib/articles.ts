@@ -12,6 +12,7 @@ export type Article =
       date: string; // ISO
       url: string;
       description?: string;
+      coverImage?: string;
     }
   | {
       type: "x";
@@ -23,9 +24,11 @@ const paragraphArticles: Article[] = [
     type: "paragraph",
     title: "The Crypto Creator Economy",
     date: "2022-11-22",
-    url: "https://paragraph.com/@blockchainbrett/the-crypto-creator-economy",
+    url: "https://paragraph.com/@blockchainbrett/the-crypto-creator-economy-2",
     description:
       "Foundational piece for the Creators GMI newsletter on the decentralized creator economy.",
+    coverImage:
+      "https://storage.googleapis.com/papyrus_images/7fef39d593c5d7ff44d6505d0d046f97cb35b6e753ced48cc806e72066754088.jpg",
   },
   {
     type: "paragraph",
@@ -34,14 +37,18 @@ const paragraphArticles: Article[] = [
     url: "https://paragraph.com/@blockchainbrett/creator-daos-gmi",
     description:
       "Token-based communities built by creators — structures, examples, and why they matter.",
+    coverImage:
+      "https://storage.googleapis.com/papyrus_images/661d34981f37d28dcb093910b3beb2ccb940369db52cf8faaec101fc37ca86de.jpg",
   },
   {
     type: "paragraph",
     title: "Music NFTs GMI",
     date: "2021-11-16",
-    url: "https://paragraph.com/@blockchainbrett/music-nfts-gmi",
+    url: "https://paragraph.com/@blockchainbrett/music-nfts-gmi-2",
     description:
       "An overview of the music NFT movement: platforms, musician DAOs, and direct artist-to-collector monetization.",
+    coverImage:
+      "https://storage.googleapis.com/papyrus_images/e8558a1a0ab18716cc9ca7f18e6cd57ad003a3672ee473d2e19b968c82ce4b2c.jpg",
   },
 ];
 
