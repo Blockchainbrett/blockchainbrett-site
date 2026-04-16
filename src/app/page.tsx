@@ -1,4 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
+import { articles } from "@/lib/articles";
+import { ArticleCard } from "@/components/ArticleCard";
+import { XArticleEmbed } from "@/components/XArticleEmbed";
 
 const experience = [
   {
@@ -53,7 +57,7 @@ const socials = [
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/brettshear",
+    url: "https://www.linkedin.com/in/brett-shear-8b553199/",
   },
   {
     name: "GitHub",
@@ -66,22 +70,38 @@ export default function Home() {
     <div className="flex flex-col flex-1">
       {/* Header */}
       <header className="border-b border-green-light">
-        <div className="max-w-3xl mx-auto px-6 py-8 flex items-center gap-4">
-          <Image
-            src="/cryptopunk.png"
-            alt="CryptoPunk avatar"
-            width={56}
-            height={56}
-            className="rounded-md"
-          />
-          <div>
-            <h1 className="text-2xl font-semibold tracking-tight text-forest">
-              Brett Shear
-            </h1>
-            <p className="mt-1 text-green-muted text-sm">
-              GP at 1confirmation
-            </p>
+        <div className="max-w-3xl mx-auto px-6 py-8 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <Image
+              src="/cryptopunk.png"
+              alt="CryptoPunk avatar"
+              width={56}
+              height={56}
+              className="rounded-md"
+            />
+            <div>
+              <h1 className="text-2xl font-semibold tracking-tight text-forest">
+                Brett Shear
+              </h1>
+              <p className="mt-1 text-green-muted text-sm">
+                GP at 1confirmation
+              </p>
+            </div>
           </div>
+          <nav className="flex gap-5">
+            <Link
+              href="/"
+              className="text-sm text-forest font-medium"
+            >
+              Home
+            </Link>
+            <Link
+              href="/writing"
+              className="text-sm text-green-muted hover:text-forest transition-colors"
+            >
+              Writing
+            </Link>
+          </nav>
         </div>
       </header>
 
@@ -97,7 +117,7 @@ export default function Home() {
           </section>
 
           {/* Experience */}
-          <section className="py-12">
+          <section className="py-12 border-b border-green-light">
             <h2 className="text-sm font-medium uppercase tracking-widest text-olive mb-8">
               Experience
             </h2>
@@ -147,6 +167,37 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+            </div>
+          </section>
+
+          {/* Writing */}
+          <section className="py-12">
+            <div className="flex items-baseline justify-between mb-8">
+              <h2 className="text-sm font-medium uppercase tracking-widest text-olive">
+                Writing
+              </h2>
+              <Link
+                href="/writing"
+                className="text-xs text-green-muted hover:text-forest transition-colors"
+              >
+                View all &rarr;
+              </Link>
+            </div>
+            <div className="space-y-6">
+              {articles.slice(0, 3).map((article) =>
+                article.type === "x" ? (
+                  <XArticleEmbed key={article.id} id={article.id} />
+                ) : (
+                  <ArticleCard
+                    key={article.url}
+                    title={article.title}
+                    date={article.date}
+                    url={article.url}
+                    description={article.description}
+                    source="Paragraph"
+                  />
+                )
+              )}
             </div>
           </section>
         </div>
