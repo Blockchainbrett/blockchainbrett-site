@@ -35,10 +35,10 @@ export async function XArticleEmbed({ id }: XArticleEmbedProps) {
         href={articleUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="block group border border-green-light rounded-lg p-5 hover:border-sage transition-colors"
+        className="block group border border-green-light rounded-lg p-4 hover:border-sage transition-colors"
       >
-        <div className="flex items-baseline justify-between gap-4 mb-2">
-          <h3 className="text-lg font-medium text-forest group-hover:text-olive transition-colors">
+        <div className="flex items-baseline justify-between gap-4">
+          <h3 className="text-base font-medium text-forest group-hover:text-olive transition-colors">
             X Article
             <span className="text-sage ml-1">&#8599;</span>
           </h3>
@@ -48,7 +48,6 @@ export async function XArticleEmbed({ id }: XArticleEmbedProps) {
             </span>
           )}
         </div>
-        <span className="text-xs uppercase tracking-widest text-olive">X</span>
       </a>
     );
   }
@@ -71,9 +70,9 @@ export async function XArticleEmbed({ id }: XArticleEmbedProps) {
           className="w-full h-48 object-cover"
         />
       )}
-      <div className="p-5">
-        <div className="flex items-baseline justify-between gap-4 mb-2">
-          <h3 className="text-lg font-medium text-forest group-hover:text-olive transition-colors">
+      <div className="p-4">
+        <div className="flex items-baseline justify-between gap-4">
+          <h3 className="text-base font-medium text-forest group-hover:text-olive transition-colors">
             {article.title}
             <span className="text-sage ml-1">&#8599;</span>
           </h3>
@@ -83,13 +82,6 @@ export async function XArticleEmbed({ id }: XArticleEmbedProps) {
             </span>
           )}
         </div>
-        {article.preview_text && (
-          <p className="text-foreground/70 text-sm leading-relaxed mb-3">
-            {article.preview_text.trim()}
-            {article.preview_text.trim().endsWith(".") ? "" : "…"}
-          </p>
-        )}
-        <span className="text-xs uppercase tracking-widest text-olive">X</span>
       </div>
     </a>
   );

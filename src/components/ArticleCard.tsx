@@ -2,8 +2,6 @@ type ArticleCardProps = {
   title: string;
   date: string;
   url: string;
-  description?: string;
-  source: string;
   coverImage?: string;
 };
 
@@ -19,8 +17,6 @@ export function ArticleCard({
   title,
   date,
   url,
-  description,
-  source,
   coverImage,
 }: ArticleCardProps) {
   return (
@@ -38,9 +34,9 @@ export function ArticleCard({
           className="w-full h-48 object-cover"
         />
       )}
-      <div className="p-5">
-        <div className="flex items-baseline justify-between gap-4 mb-2">
-          <h3 className="text-lg font-medium text-forest group-hover:text-olive transition-colors">
+      <div className="p-4">
+        <div className="flex items-baseline justify-between gap-4">
+          <h3 className="text-base font-medium text-forest group-hover:text-olive transition-colors">
             {title}
             <span className="text-sage ml-1">&#8599;</span>
           </h3>
@@ -48,14 +44,6 @@ export function ArticleCard({
             {formatDate(date)}
           </span>
         </div>
-        {description && (
-          <p className="text-foreground/70 text-sm leading-relaxed mb-3">
-            {description}
-          </p>
-        )}
-        <span className="text-xs uppercase tracking-widest text-olive">
-          {source}
-        </span>
       </div>
     </a>
   );

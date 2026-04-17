@@ -23,9 +23,7 @@ export default function WritingPage() {
                   title={article.title}
                   date={article.date}
                   url={article.url}
-                  description={article.description}
                   coverImage={article.coverImage}
-                  source="Paragraph"
                 />
               )
             )}
