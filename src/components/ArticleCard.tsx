@@ -3,6 +3,7 @@ type ArticleCardProps = {
   date: string;
   url: string;
   coverImage?: string;
+  compact?: boolean;
 };
 
 const formatDate = (iso: string) => {
@@ -18,6 +19,7 @@ export function ArticleCard({
   date,
   url,
   coverImage,
+  compact = false,
 }: ArticleCardProps) {
   return (
     <a
@@ -26,7 +28,7 @@ export function ArticleCard({
       rel="noopener noreferrer"
       className="block group border border-green-light rounded-lg overflow-hidden hover:border-sage transition-colors"
     >
-      {coverImage && (
+      {coverImage && !compact && (
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={coverImage}

@@ -2,6 +2,7 @@ import { getTweet } from "react-tweet/api";
 
 type XArticleEmbedProps = {
   id: string;
+  compact?: boolean;
 };
 
 const formatDate = (iso: string) =>
@@ -11,7 +12,7 @@ const formatDate = (iso: string) =>
     day: "numeric",
   });
 
-export async function XArticleEmbed({ id }: XArticleEmbedProps) {
+export async function XArticleEmbed({ id, compact = false }: XArticleEmbedProps) {
   let tweet;
   try {
     tweet = await getTweet(id);
@@ -62,7 +63,7 @@ export async function XArticleEmbed({ id }: XArticleEmbedProps) {
       rel="noopener noreferrer"
       className="block group border border-green-light rounded-lg overflow-hidden hover:border-sage transition-colors"
     >
-      {coverUrl && (
+      {coverUrl && !compact && (
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={coverUrl}

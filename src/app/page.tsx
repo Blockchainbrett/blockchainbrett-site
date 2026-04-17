@@ -58,10 +58,10 @@ export default function Home() {
                   View all &rarr;
                 </Link>
               </div>
-              <div className="space-y-6">
+              <div className="space-y-3">
                 {articles.slice(0, 3).map((article) =>
                   article.type === "x" ? (
-                    <XArticleEmbed key={article.id} id={article.id} />
+                    <XArticleEmbed key={article.id} id={article.id} compact />
                   ) : (
                     <ArticleCard
                       key={article.url}
@@ -69,6 +69,7 @@ export default function Home() {
                       date={article.date}
                       url={article.url}
                       coverImage={article.coverImage}
+                      compact
                     />
                   )
                 )}
