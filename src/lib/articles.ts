@@ -71,3 +71,17 @@ const articleTimestamp = (article: Article): number => {
 export const articles: Article[] = [...paragraphArticles, ...xArticles].sort(
   (a, b) => articleTimestamp(b) - articleTimestamp(a)
 );
+
+// Curated list of articles to feature on the homepage, in display order.
+const highlightedXIds = [
+  "2024889788562595897", // Real World Culture
+  "2024297598501134587", // What AI Agents x Crypto Need to Go Mainstream
+  "2018683420113588654", // Crypto: the Game of Making Money and Meaning
+  "1938224085894381680", // Real Money Games x Crypto
+  "1935319355694166067", // Card Collectibles x Crypto
+  "1930633901795352644", // Have Fun, Make Money
+];
+
+export const highlightedArticles: Article[] = highlightedXIds
+  .map((id) => articles.find((a) => a.type === "x" && a.id === id))
+  .filter((a): a is Article => a !== undefined);

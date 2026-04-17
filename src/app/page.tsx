@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { articles } from "@/lib/articles";
+import { highlightedArticles } from "@/lib/articles";
 import { experience } from "@/lib/experience";
 import { ArticleCard } from "@/components/ArticleCard";
 import { XArticleEmbed } from "@/components/XArticleEmbed";
@@ -45,11 +45,11 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Writing column */}
+            {/* Highlighted Articles column */}
             <div>
               <div className="flex items-baseline justify-between mb-8">
                 <h2 className="text-sm font-medium uppercase tracking-widest text-olive">
-                  Writing
+                  Highlighted Articles
                 </h2>
                 <Link
                   href="/writing"
@@ -59,17 +59,15 @@ export default function Home() {
                 </Link>
               </div>
               <div className="space-y-3">
-                {articles.map((article) =>
+                {highlightedArticles.map((article) =>
                   article.type === "x" ? (
-                    <XArticleEmbed key={article.id} id={article.id} compact />
+                    <XArticleEmbed key={article.id} id={article.id} />
                   ) : (
                     <ArticleCard
                       key={article.url}
                       title={article.title}
                       date={article.date}
                       url={article.url}
-                      coverImage={article.coverImage}
-                      compact
                     />
                   )
                 )}
