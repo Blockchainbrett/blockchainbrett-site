@@ -1,7 +1,13 @@
 import Image from "next/image";
 import type { ExperienceItem as ExperienceItemType } from "@/lib/experience";
 
-export function ExperienceItem({ item }: { item: ExperienceItemType }) {
+export function ExperienceItem({
+  item,
+  compact = false,
+}: {
+  item: ExperienceItemType;
+  compact?: boolean;
+}) {
   return (
     <div className="group flex gap-4">
       {item.logo ? (
@@ -17,19 +23,19 @@ export function ExperienceItem({ item }: { item: ExperienceItemType }) {
       )}
       <div className="flex-1 min-w-0">
         <div className="flex items-baseline justify-between gap-4">
-          <div className="flex items-baseline gap-3">
+          <div className="flex items-baseline gap-3 flex-wrap">
             {item.url ? (
               <a
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg font-medium text-forest hover:text-olive transition-colors"
+                className="text-base font-medium text-forest hover:text-olive transition-colors"
               >
                 {item.name}
                 <span className="text-sage ml-1">&#8599;</span>
               </a>
             ) : (
-              <h3 className="text-lg font-medium text-forest">{item.name}</h3>
+              <h3 className="text-base font-medium text-forest">{item.name}</h3>
             )}
             <span className="text-sm text-green-muted">{item.role}</span>
           </div>
@@ -37,9 +43,11 @@ export function ExperienceItem({ item }: { item: ExperienceItemType }) {
             {item.period}
           </span>
         </div>
-        <p className="mt-2 text-foreground/70 text-sm leading-relaxed max-w-xl">
-          {item.description}
-        </p>
+        {!compact && (
+          <p className="mt-2 text-foreground/70 text-sm leading-relaxed max-w-xl">
+            {item.description}
+          </p>
+        )}
       </div>
     </div>
   );

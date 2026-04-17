@@ -35,12 +35,12 @@ export default function Home() {
                   href="/experience"
                   className="text-xs text-green-muted hover:text-forest transition-colors"
                 >
-                  View all &rarr;
+                  View more &rarr;
                 </Link>
               </div>
-              <div className="space-y-10">
-                {experience.slice(0, 3).map((item) => (
-                  <ExperienceItem key={item.name} item={item} />
+              <div className="space-y-5">
+                {experience.map((item) => (
+                  <ExperienceItem key={item.name} item={item} compact />
                 ))}
               </div>
             </div>
@@ -55,11 +55,11 @@ export default function Home() {
                   href="/writing"
                   className="text-xs text-green-muted hover:text-forest transition-colors"
                 >
-                  View all &rarr;
+                  View more &rarr;
                 </Link>
               </div>
               <div className="space-y-3">
-                {articles.slice(0, 3).map((article) =>
+                {articles.map((article) =>
                   article.type === "x" ? (
                     <XArticleEmbed key={article.id} id={article.id} compact />
                   ) : (
