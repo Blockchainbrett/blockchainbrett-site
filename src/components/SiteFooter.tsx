@@ -10,7 +10,7 @@ const socials = [
 export function SiteFooter() {
   return (
     <footer className="border-t border-green-light">
-      <div className="max-w-3xl mx-auto px-6 py-8 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
         <span className="text-xs text-green-muted">
           &copy; {new Date().getFullYear()} Brett Shear
         </span>
