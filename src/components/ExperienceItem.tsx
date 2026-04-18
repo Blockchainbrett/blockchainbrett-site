@@ -9,17 +9,27 @@ export function ExperienceItem({
   compact?: boolean;
 }) {
   return (
-    <div className="group flex gap-4">
+    <div
+      className={`group flex gap-4 ${
+        compact ? "items-center" : "items-start"
+      }`}
+    >
       {item.logo ? (
         <Image
           src={item.logo}
           alt={`${item.name} logo`}
           width={36}
           height={36}
-          className="rounded-md mt-1 object-contain shrink-0"
+          className={`rounded-md object-contain shrink-0 ${
+            compact ? "" : "mt-1"
+          }`}
         />
       ) : (
-        <div className="w-9 h-9 rounded-md bg-green-light shrink-0 mt-1" />
+        <div
+          className={`w-9 h-9 rounded-md bg-green-light shrink-0 ${
+            compact ? "" : "mt-1"
+          }`}
+        />
       )}
       <div className="flex-1 min-w-0">
         <div className="flex items-baseline justify-between gap-4">
