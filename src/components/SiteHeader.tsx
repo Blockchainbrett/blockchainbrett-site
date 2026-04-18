@@ -9,7 +9,7 @@ const navLinks = [
 
 export function SiteHeader({ activePath }: { activePath: string }) {
   return (
-    <header className="border-b border-green-light">
+    <header className="sticky top-0 z-50 border-b border-green-light bg-background/85 backdrop-blur">
       <div className="max-w-6xl mx-auto px-5 sm:px-6 py-5 sm:py-8 flex items-center justify-between gap-3">
         <Link href="/" className="flex items-center gap-3 sm:gap-4 group min-w-0">
           <Image
