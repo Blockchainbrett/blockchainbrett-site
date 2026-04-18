@@ -9,11 +9,11 @@ export default function WritingPage() {
     <div className="flex flex-col flex-1">
       <SiteHeader activePath="/writing" />
       <main className="flex-1">
-        <div className="max-w-3xl mx-auto px-6 py-12">
-          <h2 className="text-sm font-medium uppercase tracking-widest text-olive mb-8">
-            Writing
+        <div className="max-w-3xl mx-auto px-5 sm:px-6 py-8 sm:py-12">
+          <h2 className="text-sm font-medium uppercase tracking-widest text-olive mb-6 sm:mb-8">
+            Writings
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-2">
             {articles.map((article) =>
               article.type === "x" ? (
                 <XArticleEmbed key={article.id} id={article.id} />

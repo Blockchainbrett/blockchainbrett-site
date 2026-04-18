@@ -8,8 +8,8 @@ export default function ExperiencePage() {
     <div className="flex flex-col flex-1">
       <SiteHeader activePath="/experience" />
       <main className="flex-1">
-        <div className="max-w-3xl mx-auto px-6 py-12">
-          <h2 className="text-sm font-medium uppercase tracking-widest text-olive mb-8">
+        <div className="max-w-3xl mx-auto px-5 sm:px-6 py-8 sm:py-12">
+          <h2 className="text-sm font-medium uppercase tracking-widest text-olive mb-6 sm:mb-8">
             Experience
           </h2>
           <div className="space-y-10">

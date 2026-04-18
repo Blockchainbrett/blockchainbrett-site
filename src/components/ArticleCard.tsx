@@ -18,7 +18,7 @@ export function ArticleCard({ title, date, url }: ArticleCardProps) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="block group border border-green-light rounded-lg p-4 hover:border-sage transition-colors"
+      className="block group border border-green-light rounded-md py-2.5 px-4 hover:border-sage transition-colors"
     >
       <div className="flex items-baseline justify-between gap-4">
         <h3 className="text-base font-medium text-forest group-hover:text-olive transition-colors">
