@@ -5,6 +5,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/experience", label: "Experience" },
   { href: "/writing", label: "Writings" },
+  { href: "/investments", label: "Investments" },
 ];
 
 export function SiteHeader({ activePath }: { activePath: string }) {
