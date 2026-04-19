@@ -32,7 +32,7 @@ export const investments: Investment[] = [
   },
   {
     name: "Polymarket",
-    logo: "/investments/polymarket.svg",
+    logo: "/investments/polymarket.png",
     url: "https://polymarket.com",
   },
 ];
