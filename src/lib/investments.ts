@@ -16,9 +16,9 @@ export const investments: Investment[] = [
     url: "https://ethereum.org",
   },
   {
-    name: "Solana",
-    logo: "/investments/solana.svg",
-    url: "https://solana.com",
+    name: "Filecoin",
+    logo: "/investments/filecoin.svg",
+    url: "https://filecoin.io",
   },
   {
     name: "Coinbase",
